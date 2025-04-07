@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t lfscovelo/simple-api:latest -f Dockerfile .
-      - run: docker tag lfscovelo/simple-api:latest
+      - run: docker build -t simple-api:latest -f Dockerfile .
+      - run: docker tag simple-api:latest lfscovelo/simple-api:latest
       - run: docker push lfscovelo/simple-api:latest
