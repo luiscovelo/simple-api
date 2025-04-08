@@ -1,8 +1,5 @@
 name: Deploy Simple API
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
