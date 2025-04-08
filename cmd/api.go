@@ -28,10 +28,12 @@ func main() {
 		panic(fmt.Errorf("failed to connect to database: %w", err))
 	}
 
+	cacheAddr := fmt.Sprintf("%s:%d", os.Getenv("REDIS_HOST"), 6379)
+
 	db.AutoMigrate(&model.Message{})
 
 	dao := dao.New(db)
-	cache := cache.New()
+	cache := cache.New(cacheAddr)
 
 	if err := cache.Ping(); err != nil {
 		panic(fmt.Errorf("failed to connect to cache: %w", err))

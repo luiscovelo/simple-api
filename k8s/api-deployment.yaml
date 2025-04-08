@@ -19,3 +19,16 @@ spec:
           image: lfscovelo/simple-api:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: DATABASE_HOST
+              value: postgres-cluster-ip-service
+            - name: DATABASE_PORT
+              value: "5432"
+            - name: DATABASE_NAME
+              value: postgres
+            - name: DATABASE_USER
+              value: postgres
+            - name: DATABASE_PASSWORD
+              value: password
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
