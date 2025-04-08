@@ -29,6 +29,6 @@ spec:
             - name: DATABASE_USER
               value: postgres
             - name: DATABASE_PASSWORD
-              value: password
+              value: postgres
             - name: REDIS_HOST
               value: redis-cluster-ip-service
