@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-api-deployment
+  labels:
+    component: api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: api
+  template:
+    metadata:
+      labels:
+        component: api
+    spec:
+      containers:
+        - name: simple-api
+          image: lfscovelo/simple-api:latest
+          ports:
+            - containerPort: 8080
