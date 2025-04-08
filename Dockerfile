@@ -6,7 +6,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o simple-api main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o simple-api cmd/api.go
 
 FROM alpine:latest
 
